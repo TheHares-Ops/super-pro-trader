@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { PortfolioCard } from "@/components/portfolio-card";
 import { TraderCard } from "@/components/trader-card";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowDownToLine,
   ArrowUpFromLine,
@@ -11,6 +12,7 @@ import {
 } from "lucide-react";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   // Mock data
   const portfolioBalance = 12580.45;
   const portfolioChange = 8.3;
@@ -123,14 +125,19 @@ const Dashboard = () => {
         <section className="space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-foreground">Traders Populaires</h3>
-            <button className="text-sm text-primary hover:text-primary/80">
+            <button 
+              onClick={() => navigate("/traders")}
+              className="text-sm text-primary hover:text-primary/80"
+            >
               Voir tout
             </button>
           </div>
 
           <div className="space-y-4">
             {topTraders.map((trader, index) => (
-              <TraderCard key={index} {...trader} />
+              <div key={index} onClick={() => navigate("/trader/1")}>
+                <TraderCard {...trader} />
+              </div>
             ))}
           </div>
         </section>
@@ -140,14 +147,15 @@ const Dashboard = () => {
       <nav className="fixed bottom-4 left-4 right-4 bg-card border border-border rounded-[20px] shadow-hover z-20">
         <div className="grid grid-cols-5 p-2">
           {[
-            { icon: "🏠", label: "Accueil", active: true },
-            { icon: "👥", label: "Traders", active: false },
-            { icon: "📋", label: "Copy", active: false },
-            { icon: "🎯", label: "Affiliation", active: false },
-            { icon: "👤", label: "Profil", active: false },
+            { icon: "🏠", label: "Accueil", active: true, path: "/dashboard" },
+            { icon: "👥", label: "Traders", active: false, path: "/traders" },
+            { icon: "📋", label: "Copy", active: false, path: "/copy-config" },
+            { icon: "🎯", label: "Affiliation", active: false, path: "/affiliation" },
+            { icon: "👤", label: "Profil", active: false, path: "/profile" },
           ].map((item, index) => (
             <button
               key={index}
+              onClick={() => navigate(item.path)}
               className={`flex flex-col items-center gap-1 p-3 rounded-xl transition-all ${
                 item.active
                   ? "bg-primary/10 text-primary"

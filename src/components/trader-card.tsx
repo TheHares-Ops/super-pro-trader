@@ -67,7 +67,10 @@ export function TraderCard({
         variant="default"
         size="default"
         className="w-full"
-        onClick={onCopy}
+        onClick={() => {
+          if (onCopy) onCopy();
+          window.location.href = "/copy-config";
+        }}
       >
         Copier ce trader
       </Button>
