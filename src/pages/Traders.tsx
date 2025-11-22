@@ -3,8 +3,10 @@ import { TraderCard } from "@/components/trader-card";
 import { InputField } from "@/components/ui/input-field";
 import { Search, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Traders = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
 
   const traders = [
@@ -119,7 +121,9 @@ const Traders = () => {
         {/* Traders List */}
         <div className="space-y-4">
           {traders.map((trader, index) => (
-            <TraderCard key={index} {...trader} />
+            <div key={index} onClick={() => navigate("/trader/1")} className="cursor-pointer">
+              <TraderCard {...trader} />
+            </div>
           ))}
         </div>
       </main>
