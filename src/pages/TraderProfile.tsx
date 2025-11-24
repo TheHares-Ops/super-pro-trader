@@ -82,16 +82,16 @@ const TraderProfile = () => {
         </div>
 
         {/* KPI Grid */}
-        <div className="grid grid-cols-3 gap-px bg-border p-6 pt-0">
-          <div className="bg-card p-4 rounded-lg">
+        <div className="grid grid-cols-3 gap-3 p-6 pt-0">
+          <div className="card-trader text-center flex flex-col justify-center">
             <p className="caption mb-1">ROI 30j</p>
             <p className="text-xl font-bold tnum text-success">+{trader.roi}%</p>
           </div>
-          <div className="bg-card p-4 rounded-lg">
+          <div className="card-trader text-center flex flex-col justify-center">
             <p className="caption mb-1">Win Rate</p>
             <p className="text-xl font-bold tnum">{trader.winRate}%</p>
           </div>
-          <div className="bg-card p-4 rounded-lg">
+          <div className="card-trader text-center flex flex-col justify-center">
             <p className="caption mb-1">Max DD</p>
             <p className="text-xl font-bold tnum text-destructive">{trader.maxDrawdown}%</p>
           </div>

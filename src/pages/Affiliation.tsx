@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/ui/status-badge";
+import { ArrowLeft } from "lucide-react";
 import {
   Users,
   DollarSign,
@@ -9,8 +10,10 @@ import {
   Share2,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 const Affiliation = () => {
+  const navigate = useNavigate();
   const { toast } = useToast();
 
   const affiliationData = {
