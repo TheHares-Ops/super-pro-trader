@@ -26,6 +26,12 @@ const WithdrawMethod = () => {
     },
     {
       icon: Coins,
+      label: "Bitcoin (BTC)",
+      description: "Crypto - Réseau Bitcoin",
+      action: "/withdraw/btc",
+    },
+    {
+      icon: Coins,
       label: "USDT (TRC20)",
       description: "Crypto - Réseau Tron",
       action: "/withdraw/usdt-trc20",
