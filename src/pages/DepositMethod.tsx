@@ -26,6 +26,12 @@ const DepositMethod = () => {
     },
     {
       icon: Coins,
+      label: "Bitcoin (BTC)",
+      description: "Crypto - Réseau Bitcoin",
+      action: "/deposit/btc",
+    },
+    {
+      icon: Coins,
       label: "USDT (TRC20)",
       description: "Crypto - Réseau Tron",
       action: "/deposit/usdt-trc20",

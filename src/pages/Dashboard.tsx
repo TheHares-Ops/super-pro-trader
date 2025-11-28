@@ -86,15 +86,30 @@ const Dashboard = () => {
 
         {/* Quick Actions */}
         <section className="grid grid-cols-3 gap-3">
-          <Button variant="outline" size="sm" className="flex-col h-auto py-4 gap-2">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="flex-col h-auto py-4 gap-2"
+            onClick={() => navigate("/deposit")}
+          >
             <ArrowDownToLine className="h-5 w-5" />
             <span className="text-xs">Dépôt</span>
           </Button>
-          <Button variant="outline" size="sm" className="flex-col h-auto py-4 gap-2">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="flex-col h-auto py-4 gap-2"
+            onClick={() => navigate("/withdraw")}
+          >
             <ArrowUpFromLine className="h-5 w-5" />
             <span className="text-xs">Retrait</span>
           </Button>
-          <Button variant="default" size="sm" className="flex-col h-auto py-4 gap-2">
+          <Button 
+            variant="default" 
+            size="sm" 
+            className="flex-col h-auto py-4 gap-2"
+            onClick={() => navigate("/copy-config")}
+          >
             <Copy className="h-5 w-5" />
             <span className="text-xs">Copier</span>
           </Button>
